@@ -60,11 +60,11 @@ const addTask = () => {
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 
-  taskInput.value="";
-}
+  taskInput.value = "";
+};
 
 //Edit an existing task
-const editTask = function() {
+const editTask = function () {
   console.log("Edit Task...");
   console.log("Change 'edit' to 'save'");
 
@@ -89,7 +89,7 @@ const editTask = function() {
 };
 
 //Delete task
-const deleteTask = function() {
+const deleteTask = function () {
   console.log("Delete Task...");
 
   const listItem = this.parentNode;
@@ -99,7 +99,7 @@ const deleteTask = function() {
 };
 
 //Mark task completed
-const taskCompleted = function() {
+const taskCompleted = function () {
   console.log("Complete Task...");
 
   //Append the task list item to the #completed-tasks
@@ -108,9 +108,9 @@ const taskCompleted = function() {
   label.className = "completed-task__label";
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
-}
+};
 
-const taskIncomplete = function() {
+const taskIncomplete = function () {
   console.log("Incomplete Task...");
   //Mark task as incomplete
   //When the checkbox is unchecked
@@ -120,11 +120,11 @@ const taskIncomplete = function() {
   label.className = "task__label";
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
-}
+};
 
 const ajaxRequest = () => {
   console.log("AJAX Request");
-}
+};
 
 //The glue to hold it all together
 
@@ -148,13 +148,13 @@ const bindTaskEvents = (taskListItem, checkBoxEventHandler) => {
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
   //Bind events to list items chldren(tasksCompleted)
   bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
-};
+}
 
 //Cycle over completedTasksHolder ul list items
 for (let i = 0; i < completedTasksHolder.children.length; i++) {
   //Bind events to list items chldren(tasksIncompleted)
   bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-};
+}
 
 //Issues with usability don't get seen until they are in front of a human tester
 
